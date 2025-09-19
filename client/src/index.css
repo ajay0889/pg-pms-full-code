@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { @apply bg-gray-50 text-gray-900; }
+
+/* Enhanced card component with better mobile spacing */
+.card { 
+  @apply bg-white rounded-lg shadow-sm p-4 sm:p-6; 
+  /* Better shadow and padding on larger screens */
+}
+
+/* Responsive button styles */
+.btn { 
+  @apply bg-gray-900 text-white px-3 py-2 rounded-md hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200;
+  /* Smoother transitions and better touch targets */
+  min-height: 44px; /* Better mobile touch target */
+}
+
+/* Enhanced input styles with better mobile UX */
+.input { 
+  @apply border border-gray-300 px-3 py-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors duration-200;
+  min-height: 44px; /* Better mobile touch target */
+}
+
+.select { 
+  @apply border border-gray-300 px-3 py-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors duration-200;
+  min-height: 44px; /* Better mobile touch target */
+}
+
+/* Mobile-first responsive table */
+.responsive-table {
+  @apply w-full;
+}
+
+.responsive-table th,
+.responsive-table td {
+  @apply p-2 text-left;
+}
+
+/* Mobile table improvements */
+@media (max-width: 768px) {
+  .responsive-table {
+    @apply text-sm;
+  }
+  
+  .responsive-table th,
+  .responsive-table td {
+    @apply p-1 text-xs;
+  }
+  
+  /* Hide less important columns on mobile */
+  .responsive-table .hide-mobile {
+    @apply hidden;
+  }
+}
+
+/* Mobile navigation improvements */
+@media (max-width: 768px) {
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-white border-t z-50 p-2;
+  }
+  
+  .mobile-nav-item {
+    @apply flex flex-col items-center justify-center p-2 text-xs;
+  }
+}
+
+/* Better mobile form layouts */
+@media (max-width: 640px) {
+  .mobile-form {
+    @apply space-y-4;
+  }
+  
+  .mobile-form .grid {
+    @apply grid-cols-1 gap-4;
+  }
+}
+
+/* Mobile-friendly pagination */
+.pagination-mobile {
+  @apply flex flex-col sm:flex-row gap-2 sm:gap-4 items-center justify-between;
+}
+
+/* Improved mobile cards */
+@media (max-width: 640px) {
+  .card {
+    @apply mx-2 p-4;
+  }
+  
+  .card-grid {
+    @apply grid-cols-1 gap-4;
+  }
+}
+
+/* Mobile-first dashboard improvements */
+.dashboard-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4;
+}
+
+.dashboard-card {
+  @apply card min-h-24 flex flex-col justify-center;
+}
+
+/* Better mobile search */
+.search-mobile {
+  @apply flex flex-col sm:flex-row gap-2;
+}
+
+/* Mobile modal improvements */
+.modal-mobile {
+  @apply fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4;
+}
+
+.modal-content-mobile {
+  @apply bg-white rounded-t-lg sm:rounded-lg w-full sm:max-w-md p-6;
+}
