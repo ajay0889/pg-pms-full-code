@@ -1,6 +1,8 @@
 # Build stage
 FROM node:20-alpine AS builder
 WORKDIR /app
+ARG VITE_API
+ENV VITE_API=${VITE_API}
 COPY package.json package-lock.json* ./
 RUN npm ci --only=production
 COPY . .
