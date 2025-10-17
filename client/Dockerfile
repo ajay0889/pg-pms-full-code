@@ -3,8 +3,10 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 ARG VITE_API
 ENV VITE_API=${VITE_API}
+# client/Dockerfile
+
 COPY package.json package-lock.json* ./
-RUN npm ci --only=production
+RUN npm ci
 COPY . .
 RUN npm run build
 
