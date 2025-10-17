@@ -1,5 +1,4 @@
 import serverless from 'serverless-http';
-import dotenv from 'dotenv'; dotenv.config();
 import app from '../server/src/app.js';
 import { connectToDatabase } from '../server/src/db.js';
 

@@ -1,6 +1,7 @@
 {
   "name": "pg-pms-monorepo",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "npm --prefix client run build"
   },
